@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Idée Cadeaux{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <h1>Idée Cadeaux d'Anniversaire</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>AgeParfait</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for idee in idees %}
+            <tr>
+                <td>{{ idee.id }}</td>
+                <td>{{ idee.nom }}</td>
+                <td>{{ idee.ageParfait }}</td>
+                <td>
+                    <a href="{{ path('admin_idee_show', {'id': idee.id}) }}">show</a>
+                    <a href="{{ path('admin_idee_edit', {'id': idee.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_idee_new') }}">Crée un nouveau</a>
+
+</div>
+
+{% endblock %}

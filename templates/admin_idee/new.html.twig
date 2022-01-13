@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Idée{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <h1>Créer une nouvelle idée</h1>
+
+    {{ include('admin_idee/_form.html.twig') }}
+
+    <a href="{{ path('admin_idee_index') }}">Retourner à la liste</a>
+
+</div>
+
+{% endblock %}

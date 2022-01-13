@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Idee{% endblock %}
+
+{% block body %}
+    <h1>Idee</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ idee.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ idee.nom }}</td>
+            </tr>
+            <tr>
+                <th>AgeParfait</th>
+                <td>{{ idee.ageParfait }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_idee_index') }}">back to list</a>
+
+    <a href="{{ path('admin_idee_edit', {'id': idee.id}) }}">edit</a>
+
+    {{ include('admin_idee/_delete_form.html.twig') }}
+{% endblock %}
